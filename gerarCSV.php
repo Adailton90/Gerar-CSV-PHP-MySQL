@@ -1,4 +1,5 @@
 <?php
+
   function gerarCSVMysql(){
 
 	// Obtendo os dados do Banco de dados:
@@ -6,14 +7,18 @@
 	$query = "SELECT * FROM usuarios";
 	
 	// Inserindo o conteúdo no arquivo:
-	$list = mysqli_query($connect, $query) or die(mysqli_error( $connect ));;
+	$list = mysqli_query($connect, $query) or die(mysqli_error( $connect ));
 	$fp = fopen('usuarios.csv', 'w');
 
 	foreach ($list as $fields) {
 		fputcsv($fp, $fields);
-	}
+	}	
 
-	echo "\n Arquivo criado com sucesso \n";
+	$query = "DELETE FROM usuarios";
+	$deletar = mysqli_query($connect, $query) or die(mysqli_error( $connect ));
+	echo  "Arquivo gerado com sucesso";
+	header("Location:form.html");
+
 	}
 	
 	gerarCSVMysql();

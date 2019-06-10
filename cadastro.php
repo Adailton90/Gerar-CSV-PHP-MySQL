@@ -1,5 +1,5 @@
-<?php
 
+<?php
 
 function insert(){
 	$nome = $_POST['nome'];
@@ -20,26 +20,8 @@ function insert(){
 	$insert = mysqli_query($connect, $query) or die(mysqli_error( $connect ));
 
 	echo "Usuario cadastrado com sucesso \n";
+	header("Location:form.html");
 } 
-
-function gerarCSVMysql(){
-
-	// Obtendo os dados do Banco de dados:
-	$connect = mysqli_connect("localhost","root","","cadastrousuario");
-	$query = "SELECT * FROM usuarios";
-	
-	// Inserindo o conteúdo no arquivo:
-	$list = mysqli_query($connect, $query) or die(mysqli_error( $connect ));;
-	$fp = fopen('usuarios.csv', 'w');
-
-	foreach ($list as $fields) {
-		fputcsv($fp, $fields);
-	}
-
-	echo "\n Arquivo criado com sucesso \n";
-}
-
 insert();
-gerarCSVMysql();
 
 ?>
