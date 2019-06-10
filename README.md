@@ -1,2 +1,2 @@
 # Gerar-CSV-PHP-MySQL
-Gerar arquivo CSV atraves de formulário com PHP &amp; MySQL 
+Atravez de uma formulario html ultlizando PHP e MySQL, é possivel criar um arquivo CSV.
