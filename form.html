@@ -1,0 +1,32 @@
+ <!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+       <meta charset="utf-8"/>
+       <title>Portal de Criação de usuários</title>
+   </head>
+
+
+   <body>
+       <form action="cadastro.php" method="post">  
+        <label>Nome:</label><input type="text" name="nome"><br>
+        <label>Data de Admissão:</label><input type="date" name="data_de_admissao"><br>
+        <label>Cargo:</label><input type="text" name="cargo"><br>
+        <label>Gestor:</label><input type="text" name="gestor"><br>
+        <label>Centro de Custo:</label><input type="number" name="cc"><br>
+        <label>Matricula:</label><input type="number" name="matricula"><br>
+        <label>Local de Trabalho:</label><input type="text" name="local_trabalho"><br>
+        <label>Informe 3 sugestões de email(Exemplo primeiro.segundoNome (em minusculo))</label>
+        <input type="text" name="sugestao1"><br>
+        <input type="text" name="sugestao2"><br>
+        <input type="text" name="sugestao3"><br>
+
+        <input type="submit" value="Cadastrar Usuário">
+        <input type="button" onclick="cadastro.php->gerarCSVMysql()" value="Gerar CSV">
+      </form>
+
+   </body>
+</html>
+
+
+
+  
